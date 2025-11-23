@@ -1,0 +1,162 @@
+<div class="profile-page">
+  <div class="profile-container">
+
+    <!-- Картка з основною інформацією -->
+    <p-card class="card-section">
+      <div class="profile-header">
+        <div class="profile-header-left">
+          <p-avatar
+          image="https://apps.ucu.edu.ua/wp-content/uploads/2023/06/VE-1650x2048.png"
+          size="xlarge"
+          shape="circle"
+          styleClass="avatar-circle"
+          ></p-avatar>
+
+          <div class="title-tags">
+            <p-tag
+              [value]="academicTitle"
+              severity="info"
+              styleClass="tag-item"
+            ></p-tag>
+            <p-tag
+              [value]="degree"
+              severity="success"
+              styleClass="tag-item"
+            ></p-tag>
+          </div>
+        </div>
+
+        <div class="profile-header-right">
+          <h2 class="prof-header-name">{{ fullName }}</h2>
+          <p class="prof-header-pos">{{ position }}</p>
+
+          <p class="prof-header-dept">{{ department }}</p>
+          <p class="prof-header-uni">{{ university }}</p>
+
+          <p-divider></p-divider>
+
+          <div class="profile-rating">
+            <div class="profile-rating-main">
+              <p-rating
+                [(ngModel)]="averageRating"
+                [readonly]="true"
+              ></p-rating>
+              <span class="profile-rating-text">
+                {{ averageRating | number:'1.1-1' }}/5
+              </span>
+            </div>
+
+            <p-tag
+              [value]="ratingCount + ' відгуків'"
+              [severity]="getRatingSeverity()"
+            ></p-tag>
+          </div>
+
+          <div class="profile-links">
+            <span class="profile-links-label">Профілі та соцмережі:</span>
+            <div class="profile-links-buttons">
+              <button
+                *ngFor="let link of socialLinks"
+                pButton
+                type="button"
+                class="p-button-rounded p-button-text profile-link-button"
+                [icon]="getIconClass(link)"
+                [label]="link.label"
+                (click)="openLink(link)"
+              ></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </p-card>
+
+    <!-- Наукові інтереси -->
+    <p-card class="card-section">
+      <h3>Наукові інтереси</h3>
+      <div class="profile-interests">
+        <p-chip
+          *ngFor="let interest of researchInterests"
+          [label]="interest"
+          class="interest-chip"
+        ></p-chip>
+      </div>
+    </p-card>
+
+    <!-- Дисципліни -->
+    <p-card class="card-section">
+      <h3>Дисципліни</h3>
+      <p-table [value]="courses" [tableStyle]="{ 'min-width': '40rem' }">
+        <ng-template pTemplate="header">
+          <tr>
+            <th>Код</th>
+            <th>Назва</th>
+            <th>Рівень</th>
+            <th>Семестр</th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-course>
+          <tr>
+            <td>{{ course.code }}</td>
+            <td>{{ course.name }}</td>
+            <td>{{ course.level }}</td>
+            <td>{{ course.semester }}</td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </p-card>
+
+    <!-- Публікації -->
+    <p-card class="card-section">
+      <h3>Публікації</h3>
+      <p-table [value]="publications" [tableStyle]="{ 'min-width': '40rem' }">
+        <ng-template pTemplate="header">
+          <tr>
+            <th>Назва</th>
+            <th>Журнал / збірник</th>
+            <th>Рік</th>
+            <th>DOI / посилання</th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-pub>
+          <tr>
+            <td>{{ pub.title }}</td>
+            <td>{{ pub.journal }}</td>
+            <td>{{ pub.year }}</td>
+            <td>
+              <ng-container *ngIf="pub.doi || pub.scopusLink; else noLink">
+                <a *ngIf="pub.doi"
+                   [href]="'https://doi.org/' + pub.doi"
+                   target="_blank">
+                  DOI
+                </a>
+                <span *ngIf="pub.doi && pub.scopusLink"> | </span>
+                <a *ngIf="pub.scopusLink"
+                   [href]="pub.scopusLink"
+                   target="_blank">
+                  Scopus
+                </a>
+              </ng-container>
+              <ng-template #noLink>—</ng-template>
+            </td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </p-card>
+
+    <!-- Оцінювання -->
+    <p-card class="card-section">
+      <h3>Оцінювання</h3>
+      <div class="profile-eval">
+        <p-rating
+          [(ngModel)]="averageRating"
+          [readonly]="true"
+        ></p-rating>
+        <span class="profile-eval-summary">
+          {{ averageRating | number:'1.1-1' }} з 5
+          (на основі {{ ratingCount }} анкет)
+        </span>
+      </div>
+    </p-card>
+
+  </div>
+</div>
