@@ -53,7 +53,7 @@ interface Publication {
 })
 export class TeacherProfileComponent {
 
-fullName = 'проф. Вадим Єрмолаєв';
+fullName = 'Проф. Вадим Єрмолаєв';
 
 position = 'Професор семантичних технологій, керівник PhD програми «Інтелектуальні системи»';
 department = 'Кафедра комп’ютерних наук та інформаційних технологій';

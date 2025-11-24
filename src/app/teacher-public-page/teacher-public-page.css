@@ -11,11 +11,17 @@
 }
 
 .card-section {
-  margin-bottom: 2.5rem;
+  display: block;
+  margin-bottom: 1rem !important;
 }
 
-.card-section ::ng-deep .p-card {
-  padding: 1.75rem 2rem;
+:host ::ng-deep .card-section .p-card {
+  margin-bottom: 1.75rem !important;
+}
+
+:host ::ng-deep .p-card {
+  border-radius: 18px;
+  margin-top: 0.5rem;
 }
 
 .profile-header {
@@ -31,8 +37,8 @@
   min-width: 220px;
 }
 
-/*збільшене фото */
-.teacher-photo {
+
+:host ::ng-deep .p-avatar.teacher-photo {
   width: 230px;
   height: 230px;
   border-radius: 50%;
