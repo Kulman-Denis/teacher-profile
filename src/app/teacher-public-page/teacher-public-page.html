@@ -6,9 +6,9 @@
       <div class="profile-header">
         <div class="profile-header-left">
           <p-avatar
-          image="https://apps.ucu.edu.ua/wp-content/uploads/2023/06/VE-1650x2048.png"
-          shape="circle"
-          styleClass="avatar-circle teacher-photo"
+            image="https://apps.ucu.edu.ua/wp-content/uploads/2023/06/VE-1650x2048.png"
+            shape="circle"
+            styleClass="avatar-circle teacher-photo"
           ></p-avatar>
 
           <div class="title-tags">
@@ -23,6 +23,19 @@
               styleClass="tag-item"
             ></p-tag>
           </div>
+
+          <button
+            pButton
+            type="button"
+            icon="pi pi-download"
+            label="CV (PDF)"
+            class="cv-button"
+            (click)="openLink({
+              type: 'personal',
+              label: 'CV',
+              url: 'https://apps.ucu.edu.ua/wp-content/uploads/2024/04/VE-cv-short-Apr-2024-EN.pdf'
+            })"
+          ></button>
         </div>
 
         <div class="profile-header-right">
@@ -66,6 +79,10 @@
             </div>
           </div>
         </div>
+      </div>
+
+      <div class="profile-bio">
+        <p *ngFor="let p of bio">{{ p }}</p>
       </div>
     </p-card>
 
