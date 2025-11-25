@@ -11,6 +11,7 @@ import { RatingModule } from 'primeng/rating';
 import { TableModule } from 'primeng/table';
 import { DividerModule } from 'primeng/divider';
 import { TagModule } from 'primeng/tag';
+import { TooltipModule } from 'primeng/tooltip';
 
 interface SocialLink {
   type: 'facebook' | 'linkedin' | 'google-scholar' | 'scopus' | 'orcid' | 'personal';
@@ -48,7 +49,8 @@ interface Publication {
     RatingModule,
     TableModule,
     DividerModule,
-    TagModule
+    TagModule,
+    TooltipModule
   ]
 })
 export class TeacherProfileComponent {
@@ -139,39 +141,39 @@ courses: Course[] = [
 
 publications: Publication[] = [
   {
-    title: 'Semantic Technologies for Intelligent Information Systems',
-    journal: 'International Journal of Semantic Computing',
-    year: 2018,
+    title: 'Ontologies of Time: Review and Trends',
+    journal: 'Proceedings of the 10th International Conference on ICT in Education, Research and Industrial Applications (ICTERI)',
+    year: 2014,
     doi: '',
-    scopusLink: ''
+    scopusLink: 'https://www.researchgate.net/publication/271906680_Ontologies_of_Time_Review_and_Trends'
   },
   {
-    title: 'Knowledge Graphs in Evolving Information Spaces',
-    journal: 'Lecture Notes in Computer Science',
-    year: 2019,
+    title: 'Information and Communication Technologies in Education, Research and Industrial Applications (15th ICTERI-2019)',
+    journal: 'Lecture Notes in Computer Science (LNCS), Springer',
+    year: 2024,
     doi: '',
-    scopusLink: ''
+    scopusLink: 'https://www.researchgate.net/publication/338674430_Information_and_Communication_Technologies_in_Education_Research_and_Industrial_Applications_15th_International_Conference_ICTERI_2019_Kherson_Ukraine_June_12-15_2019_Revised_Selected_Papers'
   },
   {
-    title: 'Distributed Artificial Intelligence for Smart Environments',
-    journal: 'Journal of Intelligent & Fuzzy Systems',
-    year: 2020,
-    doi: '',
-    scopusLink: ''
+    title: 'Ph.D. Program in Intelligent Systems: Annual Report 2023-24',
+    journal: 'UCU PhD Program Reports',
+    year: 2024,
+    doi: 'https://doi.org/10.13140/RG.2.2.27161.22889/1',
+    scopusLink: 'https://www.researchgate.net/publication/384776376_PhD_Program_in_Intelligent_Systems_Annual_Report_2023-24'
   },
   {
-    title: 'Engineering Ontologies for Dynamic Domains',
-    journal: 'Expert Systems with Applications',
-    year: 2021,
-    doi: '',
-    scopusLink: ''
+    title: 'Towards a Framework for Agent-Enabled Semantic Web Service Composition',
+    journal: 'Proceedings of the 2nd International Conference on Service Oriented Computing (ICSOC)',
+    year: 2004,
+    doi: 'https://doi.org/10.4018/jwsr.2004070104',
+    scopusLink: 'https://www.researchgate.net/publication/269562015_Towards_a_Framework_for_Agent-Enabled_Semantic_Web_Service_Composition'
   },
   {
-    title: 'Evolution of Knowledge in Intelligent Artifacts',
-    journal: 'AI Communications',
-    year: 2022,
-    doi: '',
-    scopusLink: ''
+    title: 'Ph.D. Program in Intelligent Systems: Annual Report 2023-24',
+    journal: 'UCU PhD Program Reports',
+    year: 2024,
+    doi: 'https://doi.org/10.13140/RG.2.2.27161.22889/1',
+    scopusLink: 'https://www.researchgate.net/publication/384776376_PhD_Program_in_Intelligent_Systems_Annual_Report_2023-24'
   }
 ];
 

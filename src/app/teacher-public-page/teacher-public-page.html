@@ -161,19 +161,22 @@
 
     <!-- Оцінювання -->
     <p-card class="card-section">
-      <h3>Оцінювання</h3>
+      <h3 class="rating-header">
+        Оцінювання
+        <i
+        class="pi pi-info-circle rating-info-icon"
+        pTooltip="Середній бал сформований за результатами студентських анкет."
+        tooltipPosition="top"
+        ></i>
+      </h3>
       <div class="profile-eval">
-        <p-rating
-          [(ngModel)]="averageRating"
-          [readonly]="true"
-        ></p-rating>
+        <p-rating [(ngModel)]="averageRating" [readonly]="true"></p-rating>
         <span class="profile-eval-summary">
           {{ averageRating | number:'1.1-1' }} з 5
           (на основі {{ ratingCount }} анкет)
         </span>
       </div>
     </p-card>
-
   </div>
 </div>
 
