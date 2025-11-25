@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   padding: 2.5rem 1rem;
-  background: #f5f7fb;
+  background: linear-gradient(180deg, #e5edff 0%, #f5f7fb 40%, #f9fafb 100%);
 }
 
 .profile-container {
@@ -23,10 +23,6 @@
 .card-section {
   display: block;
   margin-bottom: 1rem !important;
-}
-
-:host ::ng-deep .card-section .p-card {
-  margin-bottom: 1.75rem !important;
 }
 
 :host ::ng-deep .p-card {
@@ -116,18 +112,13 @@
   margin-top: 1rem;
 }
 
-.profile-links-buttons .profile-link-button {
-  font-size: 1.2rem;
-  padding: 0.35rem 0.9rem;
-}
-
 :host ::ng-deep .profile-link-button.p-button {
   border-radius: 999px;
   border: 1px solid #d1d5db;
   background: #ffffff;
   color: #1d4ed8;
   padding: 0.35rem 0.9rem;
-  font-size: 0.9rem;
+  font-size: 1.2rem;
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
