@@ -65,6 +65,8 @@ degree = 'науковий ступінь: кандидат фізикомате
 averageRating = 4.8;
 ratingCount = 42;
 
+currentYear = new Date().getFullYear();
+
 socialLinks: SocialLink[] = [
   { type: 'orcid', label: 'ORCID', url: 'https://orcid.org/0000-0002-5159-254X' },
   { type: 'linkedin', label: 'LinkedIn', url: 'https://www.linkedin.com/in/vadim-ermolayev/' },
