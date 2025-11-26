@@ -14,7 +14,7 @@ import { TagModule } from 'primeng/tag';
 import { TooltipModule } from 'primeng/tooltip';
 
 interface SocialLink {
-  type: 'facebook' | 'linkedin' | 'google-scholar' | 'scopus' | 'orcid' | 'personal';
+  type: 'facebook' | 'linkedin' | 'google-scholar' | 'scopus' | 'orcid' | 'personal' | 'email';
   label: string;
   url: string;
 }
@@ -91,7 +91,8 @@ socialLinks: SocialLink[] = [
   { type: 'personal', label: 'DBLP', url: 'https://dblp.org/pid/90/6206.html' },
   { type: 'scopus', label: 'Scopus', url: 'https://www.scopus.com/authid/detail.uri?authorId=13104107100' },
   { type: 'personal', label: 'Semantic Scholar', url: 'https://www.semanticscholar.org/author/V.-Ermolayev/144063236' },
-  { type: 'personal', label: 'Personal website', url: 'https://ermolayev.com/' }
+  { type: 'personal', label: 'Personal website', url: 'https://ermolayev.com/' },
+  { type: 'email', label: 'Email', url: 'mailto:ermolayev@ucu.edu.ua?subject=Запитання%20до%20викладача&body=Доброго%20дня,' }
 ];
 
 
@@ -185,6 +186,7 @@ publications: Publication[] = [
       case 'scopus': return 'pi pi-book';
       case 'orcid': return 'pi pi-id-card';
       case 'personal': return 'pi pi-globe';
+      case 'email': return 'pi pi-envelope';
       default: return 'pi pi-link';
     }
   }
